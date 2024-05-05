@@ -1,11 +1,11 @@
 public class Reservation {
     public Flight konkretny_lot;
-    public String dane;
+    public String imie_nawizko_pasazera;
     public double cena_biletu;
 
     public Reservation(Flight konkretny_lot, String dane, double cena_biletu) {
         this.konkretny_lot = konkretny_lot;
-        this.dane = dane;
+        this.imie_nawizko_pasazera = dane;
         this.cena_biletu = cena_biletu;
         konkretny_lot.setLiczba_dostepnych_miejsc(konkretny_lot.getLiczba_dostepnych_miejsc() - 1);
     }
@@ -19,11 +19,11 @@ public class Reservation {
     }
 
     public String getDane() {
-        return dane;
+        return imie_nawizko_pasazera;
     }
 
     public void setDane(String dane) {
-        this.dane = dane;
+        this.imie_nawizko_pasazera = dane;
     }
 
     public double getCena_biletu() {

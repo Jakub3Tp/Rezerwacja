@@ -7,9 +7,9 @@ public class FlightBookingSystem implements FlightReservationSystem{
         loty.add(flight);
     }
     @Override
-    public void rezerwacja(Flight konkretny_lot, String dane, double cena_biletu) {
+    public void rezerwacja(Flight konkretny_lot, String imie_nawizko_pasazera, double cena_biletu) {
         if(konkretny_lot.getLiczba_dostepnych_miejsc() > 0){
-            Reservation rezerwacja = new Reservation(konkretny_lot, dane, cena_biletu);
+            Reservation rezerwacja = new Reservation(konkretny_lot, imie_nawizko_pasazera, cena_biletu);
             rezerwacje.add(rezerwacja);
             System.out.println("Zarezerwowano");
         }else{
@@ -29,7 +29,7 @@ public class FlightBookingSystem implements FlightReservationSystem{
     public List<Flight> wyszukiwania_lotow(String miejsce_docelowe, String data_wylotu) {
         List<Flight> szukanyFlight =  new ArrayList<>();
         for(Flight flight : loty) {
-            if (flight.getMiejsce_docelowe().equalsIgnoreCase(miejsce_docelowe) && flight.getMiejsce_wylotu().equals(data_wylotu)) {
+            if (flight.getMiejsce_docelowe().equals(miejsce_docelowe) && flight.getMiejsce_wylotu().equals(data_wylotu)) {
                 szukanyFlight.add(flight);
             }
         }
