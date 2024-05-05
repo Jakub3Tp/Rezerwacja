@@ -3,7 +3,9 @@ import java.util.*;
 public class FlightBookingSystem implements FlightReservationSystem{
     private List<Flight> loty = new ArrayList<Flight>();;
     private List<Reservation> rezerwacje = new ArrayList<>();
-
+    public void DodajLot(Flight flight) {
+        loty.add(flight);
+    }
     @Override
     public void rezerwacja(Flight konkretny_lot, String dane, double cena_biletu) {
         if(konkretny_lot.getLiczba_dostepnych_miejsc() > 0){
@@ -36,15 +38,12 @@ public class FlightBookingSystem implements FlightReservationSystem{
 
     @Override
     public void wyswietlania_dostepnych_lotow() {
-        System.out.println("dostępne loty:");
+        System.out.println("Dostepne loty:");
         for (Flight flight : loty) {
-            System.out.println("przyloty: " + flight.getMiejsce_docelowe() + " odloty" + flight.getMiejsce_wylotu() +
-                    " data " + flight.getData_wylotu() + " czas trwania " + flight.getCzas_trwania_lotu() +
-                    "H , ilość wolnych miejsc" + flight.getLiczba_dostepnych_miejsc());
+            System.out.println("Przyloty: " + flight.getMiejsce_docelowe() + " Odloty" + flight.getMiejsce_wylotu() +
+                    " Wylatuja " + flight.getData_wylotu() + " Czas trwania " + flight.getCzas_trwania_lotu() +
+                    " Liczba wolnych miejsc " + flight.getLiczba_dostepnych_miejsc());
         }
     }
 
-    public void DodajLot(Flight flight) {
-        loty.add(flight);
-    }
 }
